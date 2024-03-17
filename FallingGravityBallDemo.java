@@ -9,12 +9,12 @@ import javax.swing.*;
  * A program to demonstrate a simple animation of a ball that falls to
  * the ground after being released from somewhere.
  * 
- * IMPORTANT NOTE: Thread safety is not ensured! We will get to that
- * soon. Concurrency adds complications that we have not yet seen how
- * to handle!
+ * IMPORTANT NOTE: Thread safety is not ensured! How will you address
+ * concurrency?  Do you need to address concurrency? The plot thickens.
  * 
  * @author Jim Teresco
- * @version Spring 2022
+ * @author Ira Goldstein
+ * @version Spring 2024
  */
 
 public class FallingGravityBallDemo extends MouseAdapter implements Runnable {
@@ -30,7 +30,7 @@ public class FallingGravityBallDemo extends MouseAdapter implements Runnable {
 	@Override
 	public void run() {
 
-		JFrame.setDefaultLookAndFeelDecorated(true);
+		JFrame.setDefaultLookAndFeelDecorated(false);
 		JFrame frame = new JFrame("FallingGravityBall");
 		frame.setPreferredSize(new Dimension(500, 500));
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -90,9 +90,8 @@ public class FallingGravityBallDemo extends MouseAdapter implements Runnable {
 
 	public static void main(String args[]) {
 
-		// The main method is responsible for creating a thread (more
-		// about those later) that will construct and show the graphical
-		// user interface.
+		// The main method is responsible for creating a thread 
+		// that will construct and show the graphical user interface.
 		javax.swing.SwingUtilities.invokeLater(new FallingGravityBallDemo());
 	}
 }
