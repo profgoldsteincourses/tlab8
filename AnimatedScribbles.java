@@ -7,10 +7,13 @@ import javax.swing.*;
  * This program draws a series of "Scribbles". When the mouse is pressed
  * then dragged, a series of lines are drawn from the previous to the
  * the current mouse location.
+ *
+ * IMPORTANT NOTE: Thread safety is not ensured! How will you address
+ * concurrency?  Do you need to address concurrency? So many questions.
  * 
  * @author Jim Teresco
- * @author (completed by)
- * @version Spring 2022
+ * @author Ira Goldstein
+ * @version Spring 2024
  */
 
 public class AnimatedScribbles extends MouseAdapter implements Runnable {
